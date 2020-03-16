@@ -35,13 +35,13 @@ public class DingUtil {
         return null;
     }
 
-    public static OapiRobotSendResponse sendText() {
+    public static OapiRobotSendResponse sendText(String text) {
         DingTalkClient client = new DefaultDingTalkClient(getUrl());
         OapiRobotSendRequest request = new OapiRobotSendRequest();
         request.setMsgtype("markdown");
         OapiRobotSendRequest.Markdown markdown = new OapiRobotSendRequest.Markdown();
-        markdown.setTitle("coaimfm");
-        markdown.setText("# aweghl");
+        markdown.setTitle(text);
+        markdown.setText("# " + text);
 
         request.setMarkdown(markdown);
         try {
@@ -53,7 +53,8 @@ public class DingUtil {
     }
 
     public static void main(String[] args) {
-        OapiRobotSendResponse response = sendText();
+        String text = "gagew" + System.currentTimeMillis();
+        OapiRobotSendResponse response = sendText(text);
         System.out.println(response.getErrmsg());
 
     }
