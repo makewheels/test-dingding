@@ -14,15 +14,23 @@
             <artifactId>commons-codec</artifactId>
             <version>1.14</version>
         </dependency>
-        <dependency>
-            <groupId>com.dingtalk.open</groupId>
-            <artifactId>taobao-sdk-java-auto</artifactId>
-            <version>1479188381469-20200315</version>
-        </dependency>
+
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.2</version>
+        </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>com.dingtalk.open</groupId>-->
+        <!--            <artifactId>taobao-sdk-java-auto</artifactId>-->
+        <!--            <version>1479188381469-20200315</version>-->
+        <!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>alibaba-dingtalk-service-sdk</artifactId>
+            <version>1.0.1</version>
         </dependency>
 
     </dependencies>

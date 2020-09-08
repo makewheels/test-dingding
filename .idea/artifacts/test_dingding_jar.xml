@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="test-dingding:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/test_dingding_jar</output-path>
+    <root id="archive" name="test-dingding.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="test-dingding" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../~MAVEN/repository/commons-codec/commons-codec/1.14/commons-codec-1.14.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../~MAVEN/repository/com/dingtalk/open/taobao-sdk-java-auto/1479188381469-20200315/taobao-sdk-java-auto-1479188381469-20200315.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../~MAVEN/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

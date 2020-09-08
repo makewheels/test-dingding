@@ -17,10 +17,10 @@ import java.net.URLEncoder;
  * @time 2020-03-16 18:22
  */
 public class DingUtil {
-    private final static String webhookUrl = "https://oapi.dingtalk.com/robot/send?access_token=df52b12e37f29cdd50dc64ca0fa0472d28f144f8fde14bb3a62f1224aab50a3b";
-    private final static String secret = "SECa9c39f7948dd28271a651b0dfb60d5c86b028c49f85b79d79b8522e4f2e27e13";
+    private final static String webhookUrl = "https://oapi.dingtalk.com/robot/send?access_token=3e7801c290ef27a1609c1b8ccbc4e68f8b64e173f95a8904278c36f1b2e7d34c";
+    private final static String secret = "SEC16190d470e6d75551d283cc4d7cc0223c22ae8d0e0092c1fd824739ecd88a9ee";
 
-    public static String getUrl() {
+    private static String getUrl() {
         long timestamp = System.currentTimeMillis();
         String stringToSign = timestamp + "\n" + secret;
         Mac mac;
@@ -41,7 +41,7 @@ public class DingUtil {
         OapiRobotSendRequest request = new OapiRobotSendRequest();
         request.setMsgtype("markdown");
         OapiRobotSendRequest.Markdown markdown = new OapiRobotSendRequest.Markdown();
-        markdown.setTitle(text);
+        markdown.setTitle("title");
         markdown.setText("# " + text);
 
         request.setMarkdown(markdown);
@@ -54,8 +54,8 @@ public class DingUtil {
     }
 
     public static void main(String[] args) {
-        String text = "gagew" + System.currentTimeMillis();
-        OapiRobotSendResponse response = sendText(text);
+        String message = "args[0]";
+        OapiRobotSendResponse response = sendText(message);
         System.out.println(response.getErrmsg());
 
     }
