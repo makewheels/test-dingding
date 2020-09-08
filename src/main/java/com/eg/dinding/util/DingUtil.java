@@ -10,6 +10,7 @@ import org.apache.commons.codec.binary.Base64;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.net.URLEncoder;
+import java.util.UUID;
 
 /**
  * 钉钉机器人工具类
@@ -36,14 +37,19 @@ public class DingUtil {
         return null;
     }
 
-    public static OapiRobotSendResponse sendText(String text) {
+    /**
+     * 发送 markdown text
+     *
+     * @param markdownText
+     * @return
+     */
+    public static OapiRobotSendResponse sendMarkdown(String markdownText) {
         DingTalkClient client = new DefaultDingTalkClient(getUrl());
         OapiRobotSendRequest request = new OapiRobotSendRequest();
         request.setMsgtype("markdown");
         OapiRobotSendRequest.Markdown markdown = new OapiRobotSendRequest.Markdown();
         markdown.setTitle("title");
-        markdown.setText("# " + text);
-
+        markdown.setText(markdownText);
         request.setMarkdown(markdown);
         try {
             return client.execute(request);
@@ -54,9 +60,12 @@ public class DingUtil {
     }
 
     public static void main(String[] args) {
-        String message = "args[0]";
-        OapiRobotSendResponse response = sendText(message);
-        System.out.println(response.getErrmsg());
-
+        String text = UUID.randomUUID().toString() + "\n\n" + "fefg";
+        System.out.println(text);
+        OapiRobotSendResponse response = sendMarkdown(text);
+        if (response != null) {
+            System.out.println(response.isSuccess());
+            System.out.println(response.getErrmsg());
+        }
     }
 }
